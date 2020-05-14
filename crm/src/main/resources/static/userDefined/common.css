@@ -1,0 +1,97 @@
+/**
+ * @name:   系统通用样式
+ * @author: djw
+ */
+input::-webkit-input-placeholder{font-style: oblique;color:#bbb}    /* 使用webkit内核的浏览器 */
+input:-moz-placeholder{font-style: oblique;color:#bbb}                  /* Firefox版本4-18 */
+input::-moz-placeholder{font-style: oblique;color:#bbb}                  /* Firefox版本19+ */
+input:-ms-input-placeholder{font-style: oblique;color:#bbb}
+/*页面头部*/
+.page-breadcrumb {
+    display: block;
+    height:38px;
+    width:100%;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+.breadcrumb{
+    display:inline-block;
+    color:#888;
+    font-weight:bold;
+}
+.breadcrumb > li + li::before{
+    content:">" !important;
+    color:#888 !important;
+}
+.breadcrumb li:last-child{
+    color:#000;
+}
+/**/
+.page-container,.page-edit{
+    padding-top: 10px;
+}
+/*datatables 样式*/
+.table thead tr {
+    color: #707070;
+    font-weight: 400;
+    background: #f2f2f2;
+    border-bottom: 2px solid gainsboro;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 2px solid #ddd;
+}
+table.dataTable td {
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
+}
+
+table.dataTable th {
+    word-break: keep-all;
+    white-space: nowrap;
+}
+.dataTables_info,.dataTables_length{display: inline-block;}
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: left;
+}
+/*弹出层*/
+.layui-layer-title {
+    color: #fff ! important;
+    background-color: #0CB9B7 ! important;
+}
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #0CB9B7 ! important;
+    background-color: #0CB9B7 ! important;
+}
+/*菜单*/
+.navbar-nav > li:hover .dropdown-menu {display: block;}
+.navbar-nav > li:hover{  background-color: rgba(0,0,0,0.1);}
+/*遮罩*/
+.message-container{
+    position: relative;
+}
+.message-shade {
+    position: absolute;
+    z-index: 14;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center
+}
+
+
+/*bootstrap 分页按钮当前鼠标图标显示禁用时，点击按键不允许在边框外围出现轮廓线*/
+.paginate_button.disabled >a{
+    outline:none !important;
+}

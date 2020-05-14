@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CourseOrderController {
     @RequestMapping("/courseList")
     public String index(){
-        return "/courseOrder/list";
+        return "/courseOrder/list_dataTable";
     }
     @RequestMapping("/add")
     public String add(){

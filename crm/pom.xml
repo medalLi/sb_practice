@@ -43,7 +43,9 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+<!--			//<scope>runtime</scope>-->
+			<version>5.1.47</version>
+
 		</dependency>
 
 		<!--工具类-->
@@ -101,12 +103,12 @@
 
 	</dependencies>
 
-	<repositories>
-		<repository>
-			<id>aliyunmaven</id>
-			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-		</repository>
-	</repositories>
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>aliyunmaven</id>-->
+<!--			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+<!--		</repository>-->
+<!--	</repositories>-->
 
 	<build>
 		<plugins>
