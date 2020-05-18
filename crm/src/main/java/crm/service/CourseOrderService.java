@@ -26,13 +26,13 @@ public class CourseOrderService {
 //        Sort sort = new Sort(Sort.Direction.DESC,"uuid"); //创建时间降序排序
 //
 //        Pageable pageable = PageRequest.of(Integer.parseInt(page),Integer.parseInt(size),sort);
-//       // Pageable pageable1 =
+//
 //        int pageSize = pageable.getPageSize();
 //        int pageNumber = pageable.getPageNumber();
 //        System.out.println(pageSize);
 //        System.out.println(pageNumber);
 //        return courseOrderDao.findAll(pageable);
-        return courseOrderDao.findAll();
+         return courseOrderDao.findAll();
     }
 
     // 展示课程信息

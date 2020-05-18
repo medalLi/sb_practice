@@ -65,32 +65,24 @@
             pagingType: "simple_numbers",  //分页样式：simple,simple_numbers,full,full_numbers
             dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-5'il><'col-sm-7'p>>",
             ajax: function (data, callback, settings) {
-                //封装请求参数
-                var param = sys.getForm("#dbSourceform");
-                param.limit = data.length;//页面显示记录条数，在页面显示每页显示多少项的时候
-                param.start = data.start/data.length;
                 // ajax请求数据
                 sys.ajaxDo({
                     url: "/listJson",
-                    data: param,  //传入组装的参数
                     success: function (result) {
                         //封装返回数据
                         var returnData = {};
-                        returnData.draw = data.count;//这里直接自行返回了draw计数器,应该由后台返回
-                        returnData.recordsTotal = result.count;//返回数据全部记录
-                        returnData.recordsFiltered = result.count;//后台不实现过滤功能，每次查询均视作全部结果
-                        returnData.data = result.result;//返回的数据列表
+                        returnData.count = result.count;//返回数据全部记录
+                        returnData.data = result.data;//返回的数据列表
                         //console.log(returnData);
                         //调用DataTables提供的callback方法，代表数据已封装完成并传回DataTables进行渲染
                         //此时的数据需确保正确无误，异常判断应在执行此回调前自行处理完毕
                         callback(returnData);
-
                     }
                 });
             },
             //列表表头字段
             columns: [
-                {data: "uuid", title: "UUID", width: "40px"},
+                {data: "uuid", title: "uuid", width: "40px"},
                 {data: "order_id", title: "用户名", width: "100px"},
                 {data: "wechat_mark", title: "url", width: "50px"},
                 {data: "qq_no", title: "用户", width: "50px",visible:false},
@@ -98,7 +90,6 @@
                 {data: "course_name", title: "数据源名称", width: "40px"},
                 {data: "course_price", title: "数据源描述", width: "100px"},
                 {data: "order_date", title: "url", width: "50px"},
-
                 {
                     title: "操作",
                     orderable: false,
